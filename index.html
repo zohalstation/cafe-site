@@ -1,26 +1,308 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>کافه زحل</title>
   <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      background: #f0f0f0;
+    @font-face {
+      font-family: 'Vazirmatn';
+      src: url('https://cdn.fontcdn.ir/Font/Persian/Vazirmatn/Vazirmatn-Regular.woff2') format('woff2');
     }
-    img {
-      max-width: 90%;
-      margin: 20px;
+
+    body {
+      margin: 0;
+      font-family: 'Vazirmatn', sans-serif;
+      background-color: #21618c;
+      color: #d4c29e;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('logo.svg');
+      background-size: cover;
+      background-position: center;
+      opacity: 1;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(13, 13, 13, 0.9);
+      padding: 15px 20px;
+      text-align: center;
+      z-index: 10;
+      font-size: 1.5rem;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+
+    nav {
+      margin-top: 80px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      z-index: 5;
+      position: relative;
+    }
+
+    nav button {
+      background-color: #2d2d2d;
+      color: #d4c29e;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    nav button.active, nav button:hover {
+      background-color: #524f4b;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 20px;
+      z-index: 5;
+      position: relative;
+    }
+
+    .tab-content.active {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .image-container {
+      text-align: center;
+      position: relative;
+    }
+
+    .image-container img {
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .image-container img:hover {
+      transform: scale(1.05);
+    }
+
+    .image-container p {
+      margin-top: 8px;
+      font-size: 0.9rem;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 15px;
+    }
+
+    @media (max-width: 600px) {
+      nav button {
+        flex: 1 1 100%;
+      }
+
+      .image-container img {
+        width: 100%;
+        max-width: 300px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>کافه زحل</h1>
-  <img src="logo.svg" alt="logo">
-  <img src="photo1.jpg" alt="عکس اول">
-  <img src="photo2.jpg" alt="عکس دوم">
+  <header>کافه زحل </header>
+
+  <nav>
+    <button class="tab-btn active" data-tab="coffee">دانه قهوه</button>
+    <button class="tab-btn" data-tab="tools">دم‌افزارها</button>
+    <button class="tab-btn" data-tab="cold">نوشیدنی‌های سرد</button>
+    <button class="tab-btn" data-tab="hot">نوشیدنی‌های گرم</button>
+  </nav>
+
+  <div id="coffee" class="tab-content active">
+    <div class="image-container">
+      <img src="dane 1.jpg" alt="دانه قهوه 1" />
+      <p>دانه قهوه ۱</p>
+    </div>
+ 
+    <div class="image-container">
+      <img src="dane 2.jpg" alt="دانه قهوه 2" />
+      <p>دانه قهوه 2</p>
+    </div>
+  
+    <div class="image-container">
+      <img src="dane 3.jpg" alt="دانه قهوه 3" />
+      <p>دانه قهوه 3</p>
+    </div>
+   
+ <div class="image-container">
+      <img src="dane 4.jpg" alt="دانه قهوه 4" />
+      <p>دانه قهوه 4</p>
+    </div>
+  </div>
+
+  <div id="tools" class="tab-content">
+    <div class="image-container">
+      <img src="dam 1.jpg" alt="دم‌افزار 1" />
+      <p>دم‌افزار ۱</p>
+    </div>
+  
+  <div class="image-container">
+      <img src="dam 2.jpg" alt="دم‌افزار 2" />
+      <p>دم‌افزار 2</p>
+    </div>
+  
+ <div class="image-container">
+      <img src="dam 3.jpg" alt="دم‌افزار 3" />
+      <p>دم‌افزار 3</p>
+    </div>
+   
+ <div class="image-container">
+      <img src="dam 4.jpg" alt="دم‌افزار 4" />
+      <p>دم‌افزار 4</p>
+    </div>
+       <div class="image-container">
+      <img src="dam 5.jpg" alt="دم‌افزار 5" />
+      <p>دم‌افزار 5</p>
+    </div>
+  
+  <div class="image-container">
+      <img src="dam 6.jpg" alt="دم‌افزار 6" />
+      <p>دم‌افزار 6p>
+    </div>
+  
+ <div class="image-container">
+      <img src="dam 7.jpg" alt="دم‌افزار 7" />
+      <p>دم‌افزار 7</p>
+    </div>
+   
+ <div class="image-container">
+      <img src="dam 8.jpg" alt="دم‌افزار 8" />
+      <p>دم‌افزار 8</p>
+    </div>
+
+  </div>
+
+  <div id="cold" class="tab-content">
+    <div class="image-container">
+      <img src="cold 1.jpg" alt="نوشیدنی سرد 1" />
+      <p>نوشیدنی سرد ۱</p>
+    </div>
+
+ <div class="image-container">
+      <img src="cold 2.jpg" alt="نوشیدنی سرد 2" />
+      <p>نوشیدنی سرد 2</p>
+    </div>
+
+ <div class="image-container">
+      <img src="cold 3.jpg" alt="نوشیدنی سرد 3 />
+      <p>نوشیدنی سرد 3</p>
+    </div>
+
+ <div class="image-container">
+      <img src="cold 4.jpg" alt="نوشیدنی سرد 4" />
+      <p>نوشیدنی سرد 4</p>
+    </div>
+
+    <div class="image-container">
+      <img src="cold 5.jpg" alt="نوشیدنی سرد 5" />
+      <p>نوشیدنی سرد 5</p>
+    </div>
+
+ <div class="image-container">
+      <img src="cold 6.jpg" alt="نوشیدنی سرد 6" />
+      <p>نوشیدنی سرد 6</p>
+    </div>
+
+  </div>
+
+  <div id="hot" class="tab-content">
+    <div class="image-container">
+      <img src="hot 1.jpg" alt="نوشیدنی گرم 1" />
+      <p>نوشیدنی گرم ۱</p>
+    </div>
+<div class="image-container">
+ <img src="hot 2.jpg" alt="نوشیدنی گرم 2" />
+      <p>نوشیدنی گرم 2</p>
+    </div>
+<div class="image-container">
+ <img src="hot 3.jpg" alt="نوشیدنی گرم 3" />
+      <p>نوشیدنی گرم 3</p>
+    </div>
+<div class="image-container">
+ <img src="hot 4.jpg" alt="نوشیدنی گرم 4" />
+      <p>نوشیدنی گرم 4</p>
+    </div>
+
+    <div class="image-container">
+      <img src="hot 5.jpg" alt="نوشیدنی گرم 5" />
+      <p>نوشیدنی گرم 5</p>
+    </div>
+  </div>
+
+  <div class="modal" id="modal">
+    <img src="" alt="بزرگ شده" id="modal-img">
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('.tab-content');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+        button.classList.add('active');
+        document.getElementById(button.dataset.tab).classList.add('active');
+      });
+    });
+
+    document.querySelectorAll('.image-container img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modal.style.display = 'flex';
+      });
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        modalImg.src = '';
+      }
+    });
+  </script>
 </body>
 </html>
