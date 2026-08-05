@@ -20,7 +20,7 @@
       min-height: 100vh;
     }
 
-    /* هدر جدید */
+    /* هدر */
     header {
       position: fixed;
       top: 0;
@@ -105,20 +105,32 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 15px;
+      gap: 20px;
     }
 
-    .tab-content img {
+    /* کارت عکس کوچک */
+    .img-card {
+      text-align: center;
       width: 200px;
-      height: auto;
+    }
+
+    .img-card img {
+      width: 100%;
       border-radius: 10px;
       box-shadow: 0 0 8px rgba(0,0,0,0.5);
       cursor: pointer;
       transition: transform 0.3s;
     }
 
-    .tab-content img:hover {
+    .img-card img:hover {
       transform: scale(1.05);
+    }
+
+    .img-title {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      color: #3a3a3a;
+      font-weight: bold;
     }
 
     /* بزرگ‌نمایی عکس */
@@ -226,43 +238,42 @@
     <button class="tab-btn" data-tab="hot">نوشیدنی‌های گرم</button>
   </nav>
 
+  <!-- دانه قهوه -->
   <div id="coffee" class="tab-content active">
-   <img src="dane 1.jpg" alt="دانه قهوه 1" />
-    <img src="dane 2.jpg" alt="دانه قهوه 2" />
-<img src="dane 3.jpg" alt="دانه قهوه 3" />
-<img src="dane 4.jpg" alt="دانه قهوه 4" />
-
+    <div class="img-card"><img src="dane 1.jpg" alt="دانه قهوه 1"><div class="img-title">دانه قهوه 1</div></div>
+    <div class="img-card"><img src="dane 2.jpg" alt="دانه قهوه 2"><div class="img-title">دانه قهوه 2</div></div>
+    <div class="img-card"><img src="dane 3.jpg" alt="دانه قهوه 3"><div class="img-title">دانه قهوه 3</div></div>
+    <div class="img-card"><img src="dane 4.jpg" alt="دانه قهوه 4"><div class="img-title">دانه قهوه 4</div></div>
   </div>
 
+  <!-- دم‌افزارها -->
   <div id="tools" class="tab-content">
-    <img src="dam 1.jpg" alt="دم‌افزار 1" />
-    <img src="dam 2.jpg" alt="دم‌افزار 2" />
-    <img src="dam 3.jpg" alt="دم‌افزار 3" />
-    <img src="dam 4.jpg" alt="دم‌افزار 4" />
-     <img src="dam 5.jpg" alt="دم‌افزار 5" />
-    <img src="dam 6.jpg" alt="دم‌افزار 6" /> 
-
+    <div class="img-card"><img src="dam 1.jpg" alt="دم‌افزار 1"><div class="img-title">دم‌افزار 1</div></div>
+    <div class="img-card"><img src="dam 2.jpg" alt="دم‌افزار 2"><div class="img-title">دم‌افزار 2</div></div>
+    <div class="img-card"><img src="dam 3.jpg" alt="دم‌افزار 3"><div class="img-title">دم‌افزار 3</div></div>
+    <div class="img-card"><img src="dam 4.jpg" alt="دم‌افزار 4"><div class="img-title">دم‌افزار 4</div></div>
+    <div class="img-card"><img src="dam 5.jpg" alt="دم‌افزار 5"><div class="img-title">دم‌افزار 5</div></div>
+    <div class="img-card"><img src="dam 6.jpg" alt="دم‌افزار 6"><div class="img-title">دم‌افزار 6</div></div>
   </div>
 
+  <!-- نوشیدنی سرد -->
   <div id="cold" class="tab-content">
-     <img src="cold 1.jpg" alt="نوشیدنی سرد 1" />
-        <img src="cold 2.jpg" alt="نوشیدنی سرد 2" />
-        <img src="cold 3.jpg" alt="نوشیدنی سرد 3" />
-        <img src="cold 4.jpg" alt="نوشیدنی سرد 4" />
-        <img src="cold 5.jpg" alt="نوشیدنی سرد 5" />
-        <img src="cold 6.jpg" alt="نوشیدنی سرد 6" />
-
+    <div class="img-card"><img src="cold 1.jpg" alt="نوشیدنی سرد 1"><div class="img-title">نوشیدنی سرد 1</div></div>
+    <div class="img-card"><img src="cold 2.jpg" alt="نوشیدنی سرد 2"><div class="img-title">نوشیدنی سرد 2</div></div>
+    <div class="img-card"><img src="cold 3.jpg" alt="نوشیدنی سرد 3"><div class="img-title">نوشیدنی سرد 3</div></div>
+    <div class="img-card"><img src="cold 4.jpg" alt="نوشیدنی سرد 4"><div class="img-title">نوشیدنی سرد 4</div></div>
+    <div class="img-card"><img src="cold 5.jpg" alt="نوشیدنی سرد 5"><div class="img-title">نوشیدنی سرد 5</div></div>
+    <div class="img-card"><img src="cold 6.jpg" alt="نوشیدنی سرد 6"><div class="img-title">نوشیدنی سرد 6</div></div>
   </div>
 
+  <!-- نوشیدنی گرم -->
   <div id="hot" class="tab-content">
-     <img src="hot 1.jpg" alt="نوشیدنی گرم 1" />
-    <img src="hot 2.jpg" alt="نوشیدنی گرم 2" />
-<img src="hot 3.jpg" alt="نوشیدنی گرم 3" />
-<img src="hot 4.jpg" alt="نوشیدنی گرم 4" />
-<img src="hot 5.jpg" alt="نوشیدنی گرم 5" />
-
+    <div class="img-card"><img src="hot 1.jpg" alt="نوشیدنی گرم 1"><div class="img-title">نوشیدنی گرم 1</div></div>
+    <div class="img-card"><img src="hot 2.jpg" alt="نوشیدنی گرم 2"><div class="img-title">نوشیدنی گرم 2</div></div>
+    <div class="img-card"><img src="hot 3.jpg" alt="نوشیدنی گرم 3"><div class="img-title">نوشیدنی گرم 3</div></div>
+    <div class="img-card"><img src="hot 4.jpg" alt="نوشیدنی گرم 4"><div class="img-title">نوشیدنی گرم 4</div></div>
+    <div class="img-card"><img src="hot 5.jpg" alt="نوشیدنی گرم 5"><div class="img-title">نوشیدنی گرم 5</div></div>
   </div>
-
 
   <!-- بزرگ‌نمایی عکس -->
   <div class="image-overlay" id="overlay">
@@ -270,7 +281,7 @@
     <img id="overlay-img" src="" alt="" />
   </div>
 
-  <!-- مودال درباره ما -->
+  <!-- مودال‌ها -->
   <div class="modal" id="about-modal">
     <div class="modal-box">
       <h3>درباره ما</h3>
@@ -280,13 +291,11 @@
     </div>
   </div>
 
-  <!-- مودال تماس با ما -->
   <div class="modal" id="contact-modal">
     <div class="modal-box">
       <h3>تماس با ما</h3>
-      آدرس: اصفهان
- 
-      شماره تماس: 031-0000000  
+      آدرس: اصفهان<br>
+      شماره تماس: 031-0000000<br>
       اینستاگرام: @******
       <br><br>
       <button onclick="document.getElementById('contact-modal').style.display='none'">بستن</button>
